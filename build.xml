@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AplikasiRentalKendaraan" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Aplikasi Rental Kendaraan.</description>
+    <import file="nbproject/build-impl.xml"/>
+    
+    <target name="-post-init">
+        <mkdir dir="build"/>
+        <mkdir dir="build/classes"/>
+        <mkdir dir="dist"/>
+    </target>
+</project>

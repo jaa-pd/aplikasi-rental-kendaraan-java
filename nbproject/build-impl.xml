@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AplikasiRentalKendaraan-impl" default="default" basedir="..">
+    <import file="ant-deploy.xml" optional="true"/>
+    
+    <target name="default" depends="jar"/>
+    
+    <target name="init">
+        <tstamp/>
+        <property file="nbproject/project.properties"/>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" 
+               destdir="${build.classes.dir}" 
+               source="${javac.source}" 
+               target="${javac.target}"
+               encoding="${source.encoding}"
+               includeantruntime="false">
+            <classpath path="${javac.classpath}"/>
+        </javac>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar jarfile="${dist.jar}" basedir="${build.classes.dir}" manifest="${manifest.file}">
+        </jar>
+    </target>
+    
+    <target name="run" depends="jar">
+        <java classname="${main.class}" fork="true">
+            <classpath>
+                <pathelement location="${dist.jar}"/>
+                <pathelement path="${javac.classpath}"/>
+            </classpath>
+            <jvmarg line="${run.jvmargs}"/>
+        </java>
+    </target>
+    
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>
