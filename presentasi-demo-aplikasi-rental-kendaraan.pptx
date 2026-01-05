@@ -1,0 +1,183 @@
+PRESENTATION: Demo Aplikasi Rental Kendaraan (PLACEHOLDER PPTX as plain-text export)
+
+Note: This file is a placeholder .pptx containing the slide titles, bullet points and full speaker notes extracted from the provided markdown. It includes placeholders for images/screenshots. If you need a true binary .pptx file, I can generate one and replace this placeholder file — please confirm.
+
+---
+Slide 1: Judul
+- Title: Demo Aplikasi Rental Kendaraan
+- Subtitle: Demo fungsional dan walkthrough
+
+Speaker notes:
+Selamat datang pada demo aplikasi rental kendaraan. Pada presentasi ini kita akan melihat fitur utama, arsitektur, demo fungsional (dengan screenshot placeholder), dan rencana deploy. Tujuan: menunjukkan alur pengguna, alur pemesanan, dan bagian teknis utama.
+
+[PLACEHOLDER IMAGE: Logo / cover image]
+
+---
+Slide 2: Agenda
+- Pengenalan singkat
+- Fitur utama
+- Demo: alur pemesanan
+- Arsitektur & database
+- Autentikasi & otorisasi
+- Deploy & testing
+- Ringkasan & tanya jawab
+
+Speaker notes:
+Jelaskan ringkasan agenda. Beri tahu audiens berapa lama tiap bagian kira-kira memakan waktu (mis. 5 menit pengenalan, 10 menit demo, 5 menit tanya jawab).
+
+---
+Slide 3: Pengenalan Aplikasi
+- Nama: Aplikasi Rental Kendaraan
+- Tujuan: Memfasilitasi pemesanan kendaraan untuk pelanggan
+- Platform: Backend Java, interface web (Spring/Thymeleaf atau frontend JS)
+
+Speaker notes:
+Sebutkan latar belakang: mengapa aplikasi dibuat (otomasi pemesanan, manajemen armada). Jelaskan target pengguna: admin, operator, pelanggan.
+
+---
+Slide 4: Fitur Utama
+- Registrasi & login pengguna
+- Manajemen kendaraan (CRUD)
+- Pencarian & filter kendaraan
+- Proses pemesanan & pembayaran (placeholder)
+- Riwayat pemesanan & laporan
+
+Speaker notes:
+Detail fitur: Registrasi memungkinkan profil pengguna. Admin dapat menambah/mengedit kendaraan, termasuk status ketersediaan. Pencarian mendukung filter by tipe, harga, lokasi. Proses pemesanan mencakup pemilihan tanggal, durasi, dan konfirmasi. Pembayaran bisa diintegrasikan dengan gateway (placeholder).
+
+---
+Slide 5: Demo - Login & Registrasi
+- Demo steps:
+  - Buka halaman login
+  - Klik 'Daftar' jika belum punya akun
+  - Isi data & verifikasi
+
+Speaker notes:
+Tunjukkan halaman login dan registrasi. Tekankan validasi form dan penanganan error. Jika ada OTP/email verifikasi sebutkan alurnya.
+
+[PLACEHOLDER IMAGE: Screenshot login page]
+
+---
+Slide 6: Demo - Mencari & Memilih Kendaraan
+- Pencarian berdasarkan: tipe, harga, lokasi
+- Filter: kapasitas penumpang, transmisi, bahan bakar
+- Pilih kendaraan -> lihat detail -> pilih tanggal
+
+Speaker notes:
+Walkthrough pengguna mencari kendaraan, menggunakan filter, melihat detail kendaraan (fasilitas, harga per hari), lalu memilih tanggal dan melanjutkan ke booking.
+
+[PLACEHOLDER IMAGE: Screenshot search & results]
+
+---
+Slide 7: Demo - Proses Pemesanan
+- Konfirmasi detail booking
+- Pilih metode pembayaran (placeholder)
+- Terima konfirmasi & invoice
+
+Speaker notes:
+Tunjukkan form pemesanan, ringkasan biaya, opsi asuransi (jika ada). Jelaskan alur backend: membuat entitas booking, mengurangi ketersediaan kendaraan, mengirim notifikasi.
+
+[PLACEHOLDER IMAGE: Screenshot booking flow]
+
+---
+Slide 8: Manajemen Kendaraan (Admin)
+- Tambah / edit / hapus kendaraan
+- Update status ketersediaan
+- Upload foto & detail teknis
+
+Speaker notes:
+Tunjukkan antarmuka admin untuk mengelola armada. Jelaskan validasi data dan ukuran gambar yang disarankan.
+
+[PLACEHOLDER IMAGE: Screenshot admin vehicle management]
+
+---
+Slide 9: Arsitektur Sistem
+- Komponen:
+  - Frontend (web/mobile)
+  - Backend (Spring Boot / Java)
+  - Database (MySQL/Postgres)
+  - Penyimpanan file (S3 / local)
+  - Integrasi pembayaran & notifikasi
+
+Speaker notes:
+Gambarkan arsitektur high-level. Jelaskan komunikasi antar layanan, pattern REST API, dan skenario skalabilitas. Sebutkan caching & antrian jika digunakan.
+
+---
+Slide 10: Skema Database (ringkasan)
+- Tabel utama:
+  - users (id, name, email, password_hash, role)
+  - vehicles (id, make, model, type, price_per_day, availability)
+  - bookings (id, user_id, vehicle_id, start_date, end_date, total_price, status)
+  - payments (id, booking_id, amount, method, status)
+
+Speaker notes:
+Jelaskan relasi utama: user 1-N booking, vehicle 1-N booking. Berikan contoh query untuk mencari kendaraan tersedia pada rentang tanggal tertentu.
+
+---
+Slide 11: Autentikasi & Otorisasi
+- JWT atau session-based
+- Role: ADMIN, USER
+- Proteksi endpoint & validasi input
+
+Speaker notes:
+Jelaskan mekanisme login, penyimpanan token, refresh token jika dipakai. Tekankan best practices: hashing password (bcrypt), rate-limiting, proteksi CSRF di form.
+
+---
+Slide 12: Testing & QA
+- Unit tests untuk service/core logic
+- Integration tests untuk API endpoints
+- End-to-end tests untuk alur pemesanan
+
+Speaker notes:
+Sebutkan tools yang bisa dipakai: JUnit, Mockito, Postman/Newman, Selenium atau Cypress untuk E2E. Jelaskan coverage target dan strategi CI.
+
+---
+Slide 13: Deployment
+- Environment: dev/staging/production
+- Containerization: Docker
+- Orchestration: Kubernetes (optional) atau Heroku/Cloud Run
+- CI/CD: GitHub Actions / GitLab CI
+
+Speaker notes:
+Jelaskan pipeline dasar: build, test, image push, deploy. Sebutkan environment variables dan secret management.
+
+---
+Slide 14: Roadmap & Fitur Tambahan
+- Integrasi gateway pembayaran real
+- Mobile app (Android/iOS)
+- Rating & review kendaraan
+- Fitur loyalty / promo
+
+Speaker notes:
+Bicarakan prioritas fitur yang direncanakan, perkiraan effort, dan bagaimana fitur ini meningkatkan pengalaman pengguna.
+
+---
+Slide 15: Ringkasan
+- Aplikasi menyediakan alur lengkap: registrasi -> pencarian -> pemesanan -> pembayaran
+- Arsitektur modular untuk skalabilitas
+- Sudah siap diuji lebih lanjut & di-deploy
+
+Speaker notes:
+Ulangi poin-poin kunci dan ajak audiens untuk tanya jawab.
+
+---
+Slide 16: Tanya Jawab
+- Terima kasih
+- Pertanyaan?
+
+Speaker notes:
+Buka sesi Q&A. Siapkan demo live jika diminta. Berikan kontak/next steps.
+
+---
+Appendix: Asset placeholders
+- Placeholder images used in slides:
+  - login page: /assets/placeholders/login.png
+  - search results: /assets/placeholders/search.png
+  - booking flow: /assets/placeholders/booking.png
+  - admin vehicle management: /assets/placeholders/admin.png
+
+Speaker notes:
+Silakan ganti placeholder images dengan screenshot aktual sebelum presentasi.
+
+---
+End of placeholder PPTX content.
