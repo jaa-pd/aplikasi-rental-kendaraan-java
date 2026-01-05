@@ -52,26 +52,6 @@ CREATE TABLE IF NOT EXISTS rentals (
 );
 
 -- ========================================
--- Data Awal: 10 Pelanggan (NIK Jakarta)
--- ========================================
--- NIK Indonesia: 16 digit (Format: PPDDMMYYXXXXCCCC)
--- PP = Kode Provinsi (31 = DKI Jakarta)
--- DD = Kode Kabupaten/Kota
--- MMDDYY = Tanggal Lahir
--- XXXX = Nomor Urut
--- CCCC = Kode Unik
-INSERT INTO customers VALUES ('CUS0001', 'Ahmad Wijaya', '081234567890', 'Jl. Sudirman No. 10, Jakarta Selatan', '3171012509850001');
-INSERT INTO customers VALUES ('CUS0002', 'Siti Rahayu', '082345678901', 'Jl. Gatot Subroto No. 25, Jakarta Pusat', '3172015608920002');
-INSERT INTO customers VALUES ('CUS0003', 'Budi Santoso', '083456789012', 'Jl. Thamrin No. 15, Jakarta Pusat', '3173021203880003');
-INSERT INTO customers VALUES ('CUS0004', 'Dewi Lestari', '084567890123', 'Jl. Kuningan Raya No. 8, Jakarta Selatan', '3174030107950004');
-INSERT INTO customers VALUES ('CUS0005', 'Eko Prasetyo', '085678901234', 'Jl. Rasuna Said No. 12, Jakarta Selatan', '3175042511900005');
-INSERT INTO customers VALUES ('CUS0006', 'Fitri Handayani', '086789012345', 'Jl. HR Rasuna Said No. 20, Jakarta Selatan', '3171056402930006');
-INSERT INTO customers VALUES ('CUS0007', 'Gunawan Susanto', '087890123456', 'Jl. Casablanca No. 5, Jakarta Selatan', '3172061810870007');
-INSERT INTO customers VALUES ('CUS0008', 'Hani Maulida', '088901234567', 'Jl. TB Simatupang No. 30, Jakarta Selatan', '3173072203910008');
-INSERT INTO customers VALUES ('CUS0009', 'Irfan Hidayat', '089012345678', 'Jl. Kemang Raya No. 7, Jakarta Selatan', '3174081512940009');
-INSERT INTO customers VALUES ('CUS0010', 'Joko Widodo', '081123456789', 'Jl. Senopati No. 18, Jakarta Selatan', '3175090608890010');
-
--- ========================================
 -- Data Awal: 10 Mobil (Plat Jakarta - B)
 -- ========================================
 INSERT INTO vehicles VALUES ('VH0001', 'Mobil', 'Toyota', 'Avanza', 2019, 'B 1234 ABC', 300000, TRUE, 'Baik', 'Mobil keluarga Avanza dalam kondisi baik', 4, 'Manual', NULL, NULL);

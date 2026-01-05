@@ -87,54 +87,6 @@ public class DatabaseConnection {
                 return;
             }
             
-            // Insert 10 customers with Indonesian NIK (16 digits)
-            String[] customerNames = {
-                "Ahmad Wijaya", "Siti Rahayu", "Budi Santoso", "Dewi Lestari", "Eko Prasetyo",
-                "Fitri Handayani", "Gunawan Susanto", "Hani Maulida", "Irfan Hidayat", "Joko Widodo"
-            };
-            String[] phones = {
-                "081234567890", "082345678901", "083456789012", "084567890123", "085678901234",
-                "086789012345", "087890123456", "088901234567", "089012345678", "081123456789"
-            };
-            String[] addresses = {
-                "Jl. Sudirman No. 10, Jakarta Selatan",
-                "Jl. Gatot Subroto No. 25, Jakarta Pusat",
-                "Jl. Thamrin No. 15, Jakarta Pusat",
-                "Jl. Kuningan Raya No. 8, Jakarta Selatan",
-                "Jl. Rasuna Said No. 12, Jakarta Selatan",
-                "Jl. HR Rasuna Said No. 20, Jakarta Selatan",
-                "Jl. Casablanca No. 5, Jakarta Selatan",
-                "Jl. TB Simatupang No. 30, Jakarta Selatan",
-                "Jl. Kemang Raya No. 7, Jakarta Selatan",
-                "Jl. Senopati No. 18, Jakarta Selatan"
-            };
-            // Indonesian NIK format: 16 digits
-            // Province code (31 = DKI Jakarta), District, Birth date (DDMMYY), Sequential number
-            String[] niks = {
-                "3171012509850001", // Jakarta Selatan, 25 Sept 1985
-                "3172015608920002", // Jakarta Utara, 15 Aug 1992
-                "3173021203880003", // Jakarta Barat, 12 Mar 1988
-                "3174030107950004", // Jakarta Timur, 01 Jul 1995
-                "3175042511900005", // Jakarta Pusat, 25 Nov 1990
-                "3171056402930006", // Jakarta Selatan, 24 Feb 1993
-                "3172061810870007", // Jakarta Utara, 18 Oct 1987
-                "3173072203910008", // Jakarta Barat, 22 Mar 1991
-                "3174081512940009", // Jakarta Timur, 15 Dec 1994
-                "3175090608890010"  // Jakarta Pusat, 06 Aug 1989
-            };
-            
-            for (int i = 0; i < 10; i++) {
-                String customerId = String.format("CUS%04d", i + 1);
-                String sql = String.format(
-                    "INSERT INTO customers (customer_id, name, phone_number, address, id_number) " +
-                    "VALUES ('%s', '%s', '%s', '%s', '%s')",
-                    customerId, customerNames[i], phones[i], addresses[i], niks[i]
-                );
-                stmt.execute(sql);
-            }
-            
-            System.out.println("Sample data populated: 10 customers");
-            
             // Insert 10 cars with Jakarta plates
             String[] carBrands = {"Toyota", "Honda", "Daihatsu", "Suzuki", "Mitsubishi", "Nissan", "Mazda", "Toyota", "Honda", "Daihatsu"};
             String[] carModels = {"Avanza", "Jazz", "Xenia", "Ertiga", "Xpander", "Livina", "CX-5", "Innova", "Brio", "Terios"};
@@ -187,7 +139,7 @@ public class DatabaseConnection {
                 stmt.execute(sql);
             }
             
-            System.out.println("Sample data populated successfully: 10 customers, 10 cars and 10 motorcycles");
+            System.out.println("Sample data populated successfully: 10 cars and 10 motorcycles");
             
         } catch (SQLException e) {
             System.err.println("Error populating sample data: " + e.getMessage());
